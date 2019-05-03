@@ -1,1 +1,2 @@
 export const GET_TODOITEMS = "GET_TODOITEMS";
+export const SUCCESS_CLICK = "SUCCESS_CLICK";

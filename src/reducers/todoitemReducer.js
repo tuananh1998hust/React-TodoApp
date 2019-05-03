@@ -1,9 +1,9 @@
 import uuid from "uuid";
-import { GET_TODOITEMS } from "../actions/types";
+import { GET_TODOITEMS, SUCCESS_CLICK } from "../actions/types";
 
 const inititalState = {
   todolist: [
-    { id: uuid(), title: "Go to School", isCompleted: false },
+    { id: uuid(), title: "Go to School", isCompleted: true },
     { id: uuid(), title: "Study", isCompleted: false },
     { id: uuid(), title: "Come back home", isCompleted: false }
   ]
@@ -16,6 +16,18 @@ export default function(state = inititalState, action) {
         ...state,
         todolist: [...state.todolist]
       };
+
+    case SUCCESS_CLICK:
+      return {
+        ...state,
+        todolist: state.todolist.map(item => {
+          if (item.id === action.payload) {
+            item.isCompleted = !item.isCompleted;
+          }
+          return item;
+        })
+      };
+
     default:
       return state;
   }
