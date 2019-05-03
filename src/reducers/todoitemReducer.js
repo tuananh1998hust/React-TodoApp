@@ -1,5 +1,5 @@
 import uuid from "uuid";
-import { GET_TODOITEMS, SUCCESS_CLICK } from "../actions/types";
+import { GET_TODOITEMS, SUCCESS_CLICK, DELETE_CLICK } from "../actions/types";
 
 const inititalState = {
   todolist: [
@@ -26,6 +26,12 @@ export default function(state = inititalState, action) {
           }
           return item;
         })
+      };
+
+    case DELETE_CLICK:
+      return {
+        ...state,
+        todolist: state.todolist.filter(item => item.id !== action.payload)
       };
 
     default:

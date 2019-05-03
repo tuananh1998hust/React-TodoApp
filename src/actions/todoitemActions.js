@@ -1,4 +1,4 @@
-import { GET_TODOITEMS, SUCCESS_CLICK } from "./types";
+import { GET_TODOITEMS, SUCCESS_CLICK, DELETE_CLICK } from "./types";
 
 export const getTodoitems = () => {
   return {
@@ -9,6 +9,13 @@ export const getTodoitems = () => {
 export const successClick = id => {
   return {
     type: SUCCESS_CLICK,
+    payload: id
+  };
+};
+
+export const deleteClick = id => {
+  return {
+    type: DELETE_CLICK,
     payload: id
   };
 };
