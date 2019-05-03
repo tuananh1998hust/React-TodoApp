@@ -1,0 +1,10 @@
+.item-modal {
+  width: 300px;
+}
+
+.item-modal .input {
+  width: 100%;
+  padding: 10px;
+  border: 0px #fff;
+  border-bottom: 4px solid #ccc;
+}
